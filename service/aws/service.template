@@ -19,7 +19,7 @@
             },
             "ap-southeast-2": {
                 "AMI": "ami-c9deebaa"
-            },
+            }
         }
     },
     "Outputs": {
