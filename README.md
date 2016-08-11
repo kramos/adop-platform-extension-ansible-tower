@@ -1,13 +1,7 @@
 # Ansible Tower Server Platform Extension
 This platform extension spins up a blank Ansible Tower server with Ansible Tower installed making use of the AWS-type platform extension. 
 
-The following additional Ansible Tower features are free for TODO - does this support freemium?:
-
-TOOD: replace:
-* High Availability. Ensure that your Chef service is uninterrupted within your data center or AWS region, even if a Chef server fails.
-* Reporting. Capture and visualize what happens during the execution of chef-client runs across all of your Chef-managed infrastructure.
-* Management Console. Use the web-based management console to manage RBAC, edit and delete nodes, and reset private keys. Keep up to date with what’s happening during chef client runs across an entire organization or on specific nodes.
-* Analytics Platform. Get visibility into your Chef servers, verify compliance and keep up with changes, all with the Chef analytics platform.
+Ansible Tower is a purely commerical product, so you will need a license to use the tower.  Trial licenses are available from Redhat.
 
 ## Getting Started
 
@@ -17,18 +11,14 @@ services/<the hosting provider where you want the platform extension to be loade
 ```
 
 # Accessing your Ansible Tower server
-The URL to access the chef server will be in the following format:
-``` https://EC2-Service-Extension-<extension-number>.<ADOP-public-IP>.xip.io/ ```
+The URL to access the Ansible Tower server will be in the following format:
+``` https://EC2-Service-Extension-<extension-number>.<ADOP-public-IP>.xip.io/#/home ```
 
-Once the platform extension has been loaded, the chef server will be proxied over port 443 from Nginx and is accessible over HTTPS.
+Once the platform extension has been loaded, the Ansible Tower server will be proxied by Nginx.
 
 The default access credentials for the chef server web UI (once you have loaded the platform extension) are as follows:
 
  * username: admin
- * password: admin@1
+ * password: You will need to ssh to the server to find this...
  
-The chef server is designed to be used alongside the [ADOP chef cartridge](https://github.com/Accenture/adop-cartridge-chef). In order to do this, you will need to obtain certain parameters from your chef server:
 
-* Organisation URL: This will be in the form of ``` https://EC2-Service-Extension-<extension-number>.<ADOP-public-IP>.xip.io/organizations/devops ```
-* SSH key (pem file) for the Ansible Tower server user: This can be obtained by accessing the user page from a URL such as ``` https://EC2-Service-Extension-<extension-number>.<ADOP-public-IP>.xip.io/users/admin ``` and then resetting the private key and taking note of it
-* SSH key (pem file) for the Ansible Tower server validator: This can be accessed by accessing the organisation URL from ``` https://EC2-Service-Extension-<extension-number>.<ADOP-public-IP>.xip.io/organizations/devops ``` and resetting the validation key by clicking on the cog next to your organisation
