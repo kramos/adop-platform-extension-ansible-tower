@@ -3,7 +3,7 @@
 
 ## Getting Started
 
-1. Ensure you create a user with the following cloud formation with the policy in: adop-chef-plat-extn.policy
+1. Ensure you create a user with the following cloud formation with the policy in: adop-ansible-tower-plat-extn.policy
 2. The user doesn't not need a username and password
 3. The user does need an API access key and secret access key.  Create / locate these.
 4. In the Jenkins instance within your ADOP stack navigate to the Platform Management folder
@@ -18,12 +18,6 @@ If the platform extension loading job fails with:
 echo 'ERROR : Stack creation failed after 60 seconds. Please check the AWS console for more information.'
 ```
 Check the Cloud Formation service in the AWS web console.  
-
-If you see the message:
-```
-In order to use this AWS Marketplace product you need to accept terms and subscribe.
-```
-You need to follow the link provided and create a nano machine (which you should promptly delete).  
 
 
 ## General information about AWS platform extensions
